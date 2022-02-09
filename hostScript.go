@@ -10,16 +10,18 @@ import (
 var exists bool
 
 func windows() {
-	if _, err := os.Stat("$HOME/VirtualBox VMs"); !os.IsNotExist(err) {
-		exists = true
+	userDir, _ := os.UserHomeDir()
+	if _, err := os.Stat(fmt.Sprintf("%s\\VirtualBox VMs", userDir)) !os.IsNotExist(err) {
+        exists = true
 	} else {
 		fmt.Println("Please specify a path to wher your VM's are saved")
 		os.Exit()
 	}
 }
 func linux() {
-	if _, err := os.Stat("~/VirtualBox VMs"); !os.IsNotExist(err) {
-		exists = true
+	userDir, _ := os.UserHomeDir()
+	if _, err := os.Stat(fmt.Sprintf("%s/VirtualBox VMs", userDir) !os.IsNotExist(err) {
+        exists = true
 	} else {
 		fmt.Println("Please specify a path to wher your VM's are saved")
 		os.Exit()
@@ -33,9 +35,9 @@ func main() {
 	} else {
 		os.Exit()
 	}
-	path := flag.String("path")
+	newPath := flag.String("path")
 	flag.Parse()
-	if !strings.Matches(*path, /[/]+/g) {
+	if !strings.Matches(*newPath, /[/]+/g) {
 		fmt.Println("Please include the full file path.")
 		os.Exit()
 	}
