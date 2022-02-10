@@ -60,16 +60,16 @@ func openShit() {
 	//install choco for headless
 	exec.Command("Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))").Run()
 	//Install programs
-	exec.Command("choco", "install adobereader").Run()
-	exec.Command("choco", "install google-drive-file-stream").Run()
-	exec.Command("choco", "install vlc").Run()
-	exec.Command("choco", "install 7zip").Run()
-	exec.Command("choco", "install notepadplusplus").Run()
-	exec.Command("choco", "install zoom").Run()
-	exec.Command("choco", "install malwarebytes").Run()
-	exec.Command("choco", "install winrar").Run()
-	exec.Command("choco", "install teamviewer").Run()
-	exec.Command("choco", "install paint.net").Run()
+	exec.Command("cmd.exe", "choco install adobereader").Run()
+	exec.Command("cmd.exe", "choco install google-drive-file-stream").Run()
+	exec.Command("cmd.exe", "choco install vlc").Run()
+	exec.Command("cmd.exe", "choco install 7zip").Run()
+	exec.Command("cmd.exe", "choco install notepadplusplus").Run()
+	exec.Command("cmd.exe", "choco install zoom").Run()
+	exec.Command("cmd.exe", "choco install malwarebytes").Run()
+	exec.Command("cmd.exe", "choco install winrar").Run()
+	exec.Command("cmd.exe", "choco install teamviewer").Run()
+	exec.Command("cmd.exe", "choco install paint.net").Run()
 
 }
 func fuckYourProcesses() {
