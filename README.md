@@ -9,3 +9,6 @@ make sure the exe asks for admin/root and refuses to run if its not given<br>
 ~~make sure the exe is ran in some sort of terminal~~<br>
 ~~fix paths~~<br>
 add vbox manage stuff<br>
+
+# TODO on VMScript
+everything<br>
