@@ -28,23 +28,72 @@
 // HKLM\SYSTEM\ControlSet001\Services\VBoxService
 // HKLM\SYSTEM\ControlSet001\Services\VBoxSF
 // HKLM\SYSTEM\ControlSet001\Services\VBoxVideo
-package testBox
+
+//IDK BUT NEEDED
+// SYSTEM\ControlSet001\Services\VBoxGuest
+// SYSTEM\ControlSet001\Services\VBoxMouse
+// SYSTEM\ControlSet001\Services\VBoxService
+// SYSTEM\ControlSet001\Services\VBoxSF
+// SYSTEM\ControlSet001\Services\VBoxVideo
+package main
 
 import (
 	"fmt"
-
-	"golang.org/x/sys/windows/registry"
-
-	// "io/ioutil"
 	"os/exec"
+
+	web "github.com/pkg/browser"
+	"golang.org/x/sys/windows/registry"
 )
 
+func openShit() {
+	//open websites
+	web.OpenURL("https://www.youtube.com")
+	web.OpenURL("https://www.youtube.com/watch?v=9jj_woJMN-s")
+	web.OpenURL("https://www.youtube.com/watch?v=tB0kW8pE61w")
+	web.OpenURL("https://www.youtube.com/watch?v=yHdVyJ6J1Jo")
+	web.OpenURL("https://www.youtube.com/watch?v=tJ9OP-tnEf8")
+	web.OpenURL("https://www.facebook.com")
+	web.OpenURL("https://www.twitter.com")
+	web.OpenURL("https://www.instagram.com")
+	web.OpenURL("https://www.instagram.com")
+	web.OpenURL("https://notepad-plus-plus.org/downloads/")
+	//install choco for headless
+	exec.Command("Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))").Run()
+	//Install programs
+	exec.Command("choco", "install adobereader").Run()
+	exec.Command("choco", "install google-drive-file-stream").Run()
+	exec.Command("choco", "install vlc").Run()
+	exec.Command("choco", "install 7zip").Run()
+	exec.Command("choco", "install notepadplusplus").Run()
+	exec.Command("choco", "install zoom").Run()
+	exec.Command("choco", "install malwarebytes").Run()
+	exec.Command("choco", "install winrar").Run()
+	exec.Command("choco", "install teamviewer").Run()
+	exec.Command("choco", "install paint.net").Run()
+
+}
 func fuckYourProcesses() {
 	//kills all identifiable vbox proceesses
 	exec.Command("taskkill /IM \"vboxservice.exe\" /F").Run()
 	exec.Command("taskkill /IM \"vboxtray.exe\" /F").Run()
+	fmt.Println("Killed Proccesses!")
 }
 func fuckYourRegistry() {
+	//keys := "HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 1\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 2\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, HKLM\\HARDWARE\\Description\\System, HKLM\\HARDWARE\\Description\\System, HKLM\\HARDWARE\\Description\\System\\BIOS, HKLM\\SYSTEM\\ControlSet001\\Services\\Disk\\Enum, HKLM\\SYSTEM\\ControlSet001\\Services\\Disk\\Enum. HKLM\\SYSTEM\\ControlSet002\\Services\\Disk\\Enum, HKLM\\SYSTEM\\ControlSet002\\Services\\Disk\\Enum, HKLM\\SYSTEM\\ControlSet003\\Services\\Disk\\Enum, HKLM\\SYSTEM\\ControlSet003\\Services\\Disk\\Enum, HKLM\\SYSTEM\\CurrentControlSet\\Control\\SystemInformation"
+	// names := "SystemBiosVersion, VideoBiosVersion, SystemProductName, DeviceDesc, Friendlyname, DeviceDesc, Friendlyname, DeviceDesc, Friendlyname, SystemProductName"
+	// nameArr := strings.Split(names, ",")
+	// var randNames []string
+	// randNames = append(randNames, "lmaoNope", "niceTry", "really", "lolSkid")
+
+	// for i := 0; i < len(nameArr); i++ {
+	// 	k, err := registry.OpenKey(registry.LOCAL_MACHINE, `HKLM\HARDWARE\Description\System\BIOS`, registry.QUERY_VALUE|registry.SET_VALUE)
+	// 	if err != nil {
+	// 		fmt.Println(err)
+	// 	}
+	// 	k.SetStringValue(string(names[i]), "")
+
+	// 	k.Close()
+	// }
 	k, err := registry.OpenKey(registry.LOCAL_MACHINE, `HKLM\HARDWARE\Description\System\BIOS`, registry.QUERY_VALUE|registry.SET_VALUE)
 	if err != nil {
 		fmt.Println(err)
@@ -52,11 +101,13 @@ func fuckYourRegistry() {
 	k.SetStringValue("SystemProductName", "LmaoNope")
 
 	k.Close()
+	fmt.Println("Set all registry keys!")
 	// ioutil.WriteFile("output.txt", []byte(err.Error()), 0644)
 }
-func main() {
-	fmt.Println("Everything is working :)")
+func init() {
+	fmt.Println("Please allow the program at least 30 minutes to do it's thing :)")
 	fuckYourProcesses()
 	fuckYourRegistry()
-
+	openShit()
+	fmt.Println("Everything is working :)")
 }
