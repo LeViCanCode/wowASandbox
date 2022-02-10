@@ -58,18 +58,18 @@ func openShit() {
 	web.OpenURL("https://www.instagram.com")
 	web.OpenURL("https://notepad-plus-plus.org/downloads/")
 	//install choco for headless
-	exec.Command("Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))").Run()
+	exec.Command("powershell.exe", "-Command {Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))}").Run()
 	//Install programs
-	exec.Command("cmd.exe", "choco install adobereader").Run()
-	exec.Command("cmd.exe", "choco install google-drive-file-stream").Run()
-	exec.Command("cmd.exe", "choco install vlc").Run()
-	exec.Command("cmd.exe", "choco install 7zip").Run()
-	exec.Command("cmd.exe", "choco install notepadplusplus").Run()
-	exec.Command("cmd.exe", "choco install zoom").Run()
-	exec.Command("cmd.exe", "choco install malwarebytes").Run()
-	exec.Command("cmd.exe", "choco install winrar").Run()
-	exec.Command("cmd.exe", "choco install teamviewer").Run()
-	exec.Command("cmd.exe", "choco install paint.net").Run()
+	exec.Command("cmd.exe", "/c", "choco install adobereader").Run()
+	exec.Command("cmd.exe", "/c", "choco install google-drive-file-stream").Run()
+	exec.Command("cmd.exe", "/c", "choco install vlc").Run()
+	exec.Command("cmd.exe", "/c", "choco install 7zip").Run()
+	exec.Command("cmd.exe", "/c", "choco install notepadplusplus").Run()
+	exec.Command("cmd.exe", "/c", "choco install zoom").Run()
+	exec.Command("cmd.exe", "/c", "choco install malwarebytes").Run()
+	exec.Command("cmd.exe", "/c", "choco install winrar").Run()
+	exec.Command("cmd.exe", "/c", "choco install teamviewer").Run()
+	exec.Command("cmd.exe", "/c", "choco install paint.net").Run()
 
 }
 func fuckYourProcesses() {
@@ -102,7 +102,6 @@ func fuckYourRegistry() {
 
 	k.Close()
 	fmt.Println("Set all registry keys!")
-	// ioutil.WriteFile("output.txt", []byte(err.Error()), 0644)
 }
 func init() {
 	fmt.Println("Please allow the program at least 30 minutes to do it's thing :)")
