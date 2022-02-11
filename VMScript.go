@@ -1,33 +1,33 @@
 //REGKEYS
-// HKLM\HARDWARE\DEVICEMAP\Scsi\Scsi Port 0\Scsi Bus 0\Target Id 0\Logical Unit Id 0	Identifier	VBOX
-// HKLM\HARDWARE\DEVICEMAP\Scsi\Scsi Port 1\Scsi Bus 0\Target Id 0\Logical Unit Id 0	Identifier	VBOX
-// HKLM\HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 0	Identifier	VBOX
-// HKLM\HARDWARE\Description\System	SystemBiosVersion	VBOX
-// HKLM\HARDWARE\Description\System	VideoBiosVersion	VIRTUALBOX
-// HKLM\HARDWARE\Description\System\BIOS	SystemProductName	VIRTUAL
-// HKLM\SYSTEM\ControlSet001\Services\Disk\Enum	DeviceDesc	VBOX
-// HKLM\SYSTEM\ControlSet001\Services\Disk\Enum	FriendlyName	VBOX
-// HKLM\SYSTEM\ControlSet002\Services\Disk\Enum	DeviceDesc	VBOX
-// HKLM\SYSTEM\ControlSet002\Services\Disk\Enum	FriendlyName	VBOX
-// HKLM\SYSTEM\ControlSet003\Services\Disk\Enum	DeviceDesc	VBOX
-// HKLM\SYSTEM\ControlSet003\Services\Disk\Enum	FriendlyName	VBOX
-// HKLM\SYSTEM\CurrentControlSet\Control\SystemInformation	SystemProductName	VIRTUAL
-// HKLM\SYSTEM\CurrentControlSet\Control\SystemInformation	SystemProductName	VIRTUALBOX
+// cpuid.CPU.\HARDWARE\DEVICEMAP\Scsi\Scsi Port 0\Scsi Bus 0\Target Id 0\Logical Unit Id 0	Identifier	VBOX
+// cpuid.CPU.\HARDWARE\DEVICEMAP\Scsi\Scsi Port 1\Scsi Bus 0\Target Id 0\Logical Unit Id 0	Identifier	VBOX
+// cpuid.CPU.\HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 0	Identifier	VBOX
+// cpuid.CPU.\HARDWARE\Description\System	SystemBiosVersion	VBOX
+// cpuid.CPU.\HARDWARE\Description\System	VideoBiosVersion	VIRTUALBOX
+// cpuid.CPU.\HARDWARE\Description\System\BIOS	SystemProductName	VIRTUAL
+// cpuid.CPU.\SYSTEM\ControlSet001\Services\Disk\Enum	DeviceDesc	VBOX
+// cpuid.CPU.\SYSTEM\ControlSet001\Services\Disk\Enum	FriendlyName	VBOX
+// cpuid.CPU.\SYSTEM\ControlSet002\Services\Disk\Enum	DeviceDesc	VBOX
+// cpuid.CPU.\SYSTEM\ControlSet002\Services\Disk\Enum	FriendlyName	VBOX
+// cpuid.CPU.\SYSTEM\ControlSet003\Services\Disk\Enum	DeviceDesc	VBOX
+// cpuid.CPU.\SYSTEM\ControlSet003\Services\Disk\Enum	FriendlyName	VBOX
+// cpuid.CPU.\SYSTEM\CurrentControlSet\Control\SystemInformation	SystemProductName	VIRTUAL
+// cpuid.CPU.\SYSTEM\CurrentControlSet\Control\SystemInformation	SystemProductName	VIRTUALBOX
 
 //CPU ID STUFF
 // https://superuser.com/questions/625648/virtualbox-how-to-force-a-specific-cpu-to-the-guest
 
 //STUFF TO HOOK
-// HKLM\SYSTEM\CurrentControlSet\Enum\PCI\VEN_80EE*	Subkey has the following structure: VEN_XXXX&DEV_YYYY&SUBSYS_ZZZZ&REV_WW
-// HKLM\HARDWARE\ACPI\DSDT\VBOX__
-// HKLM\HARDWARE\ACPI\FADT\VBOX__
-// HKLM\HARDWARE\ACPI\RSDT\VBOX__
-// HKLM\SOFTWARE\Oracle\VirtualBox Guest Additions
-// HKLM\SYSTEM\ControlSet001\Services\VBoxGuest
-// HKLM\SYSTEM\ControlSet001\Services\VBoxMouse
-// HKLM\SYSTEM\ControlSet001\Services\VBoxService
-// HKLM\SYSTEM\ControlSet001\Services\VBoxSF
-// HKLM\SYSTEM\ControlSet001\Services\VBoxVideo
+// cpuid.CPU.\SYSTEM\CurrentControlSet\Enum\PCI\VEN_80EE*	Subkey has the following structure: VEN_XXXX&DEV_YYYY&SUBSYS_ZZZZ&REV_WW
+// cpuid.CPU.\HARDWARE\ACPI\DSDT\VBOX__
+// cpuid.CPU.\HARDWARE\ACPI\FADT\VBOX__
+// cpuid.CPU.\HARDWARE\ACPI\RSDT\VBOX__
+// cpuid.CPU.\SOFTWARE\Oracle\VirtualBox Guest Additions
+// cpuid.CPU.\SYSTEM\ControlSet001\Services\VBoxGuest
+// cpuid.CPU.\SYSTEM\ControlSet001\Services\VBoxMouse
+// cpuid.CPU.\SYSTEM\ControlSet001\Services\VBoxService
+// cpuid.CPU.\SYSTEM\ControlSet001\Services\VBoxSF
+// cpuid.CPU.\SYSTEM\ControlSet001\Services\VBoxVideo
 
 //IDK BUT NEEDED
 // SYSTEM\ControlSet001\Services\VBoxGuest
@@ -79,14 +79,14 @@ func fuckYourProcesses() {
 	fmt.Println("Killed Proccesses!")
 }
 func fuckYourRegistry() {
-	//keys := "HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 1\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 2\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, HKLM\\HARDWARE\\Description\\System, HKLM\\HARDWARE\\Description\\System, HKLM\\HARDWARE\\Description\\System\\BIOS, HKLM\\SYSTEM\\ControlSet001\\Services\\Disk\\Enum, HKLM\\SYSTEM\\ControlSet001\\Services\\Disk\\Enum. HKLM\\SYSTEM\\ControlSet002\\Services\\Disk\\Enum, HKLM\\SYSTEM\\ControlSet002\\Services\\Disk\\Enum, HKLM\\SYSTEM\\ControlSet003\\Services\\Disk\\Enum, HKLM\\SYSTEM\\ControlSet003\\Services\\Disk\\Enum, HKLM\\SYSTEM\\CurrentControlSet\\Control\\SystemInformation"
+	//keys := "cpuid.CPU.\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, cpuid.CPU.\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 1\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, cpuid.CPU.\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 2\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0, cpuid.CPU.\\HARDWARE\\Description\\System, cpuid.CPU.\\HARDWARE\\Description\\System, cpuid.CPU.\\HARDWARE\\Description\\System\\BIOS, cpuid.CPU.\\SYSTEM\\ControlSet001\\Services\\Disk\\Enum, cpuid.CPU.\\SYSTEM\\ControlSet001\\Services\\Disk\\Enum. cpuid.CPU.\\SYSTEM\\ControlSet002\\Services\\Disk\\Enum, cpuid.CPU.\\SYSTEM\\ControlSet002\\Services\\Disk\\Enum, cpuid.CPU.\\SYSTEM\\ControlSet003\\Services\\Disk\\Enum, cpuid.CPU.\\SYSTEM\\ControlSet003\\Services\\Disk\\Enum, cpuid.CPU.\\SYSTEM\\CurrentControlSet\\Control\\SystemInformation"
 	// names := "SystemBiosVersion, VideoBiosVersion, SystemProductName, DeviceDesc, Friendlyname, DeviceDesc, Friendlyname, DeviceDesc, Friendlyname, SystemProductName"
 	// nameArr := strings.Split(names, ",")
 	// var randNames []string
 	// randNames = append(randNames, "lmaoNope", "niceTry", "really", "lolSkid")
 
 	// for i := 0; i < len(nameArr); i++ {
-	// 	k, err := registry.OpenKey(registry.LOCAL_MACHINE, `HKLM\HARDWARE\Description\System\BIOS`, registry.QUERY_VALUE|registry.SET_VALUE)
+	// 	k, err := registry.OpenKey(registry.LOCAL_MACHINE, `cpuid.CPU.\HARDWARE\Description\System\BIOS`, registry.QUERY_VALUE|registry.SET_VALUE)
 	// 	if err != nil {
 	// 		fmt.Println(err)
 	// 	}
@@ -94,7 +94,7 @@ func fuckYourRegistry() {
 
 	// 	k.Close()
 	// }
-	k, err := registry.OpenKey(registry.LOCAL_MACHINE, `HKLM\HARDWARE\Description\System\BIOS`, registry.QUERY_VALUE|registry.SET_VALUE)
+	k, err := registry.OpenKey(registry.LOCAL_MACHINE, `cpuid.CPU.\HARDWARE\Description\System\BIOS`, registry.QUERY_VALUE|registry.SET_VALUE)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -103,7 +103,7 @@ func fuckYourRegistry() {
 	k.Close()
 	fmt.Println("Set all registry keys!")
 }
-func init() {
+func main() {
 	fmt.Println("Please allow the program at least 30 minutes to do it's thing :)")
 	fuckYourProcesses()
 	fuckYourRegistry()
