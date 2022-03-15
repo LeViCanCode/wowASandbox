@@ -1,5 +1,5 @@
 # wowASandbox
-Malware Sandbox for Virtualbox using kernel hooks
+Malware Sandbox for Virtualbox using stealth kernel hooks
 
 
 # TODO on HostScript
